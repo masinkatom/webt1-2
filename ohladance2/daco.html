@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GolfVista</title>
+  <link rel="icon" href="Pictures/icons8-golf-100(1).png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>
+    GolfVista <br />
+    Rezervácia
+  </h1>
+  <form id="reservation-form" action="https://form2mail.iolab.sk/form2mail.php" method="post"
+    enctype="multipart/form-data">
+  <input type="hidden" name="apikey" value="ab929579c6d41b5c97828dc87fea5030">
+  <input type="hidden" name="from" value="xdedinsky@stuba.sk">
+  <input type="hidden" name="sender" value="xdedinsky">
+  <input type="hidden" name="to" value="dedinskyadam@gmail.com">
+  <input type="hidden" name="subject" value="Zadanie2">
+  <input type="hidden" name="redirectOk" value="https://papertoilet.com/">
+  <input type="hidden" name="redirectFalse" value="https://puginarug.com/">
+  <section class="reservation-container">
+    <section class="column">
+      <label for="name" style="color: white">Meno: <span style="color: red">*</span></label>
+      <input type="text" id="name" placeholder="Zadaj meno" required maxlength="10" />
+      <div id="name-character-count" class="character-count">0/10</div>
+      <div id="name-error" class="error-message" style="display: none; color: red">
+        Zadaj meno !
+      </div>
+
+      <label for="surname" style="color: white">Priezvisko: <span style="color: red">*</span></label>
+      <input type="text" id="surname" placeholder="Zadaj priezvisko" required maxlength="15" />
+      <div id="surname-character-count" class="character-count">0/15</div>
+      <div id="surname-error" class="error-message" style="display: none; color: red">
+        Zadaj priezvisko !
+      </div>
+      <label for="email" style="color: white">Email: <span style="color: red">*</span></label>
+      <input type="email" id="email" placeholder="Zadaj email xyz@xyz.com" required maxlength="30" />
+      <div id="email-character-count" class="character-count">0/30</div>
+      <p id="email-error" style="color: red; display: none">
+        Neplatný formát e-mailovej adresy!
+      </p>
+      <div id="email-error-empty" class="error-message" style="display: none; color: red">
+        Zadaj email !
+      </div>
+
+      <label for="gender" style="color: white">Pohlavie: <span style="color: red">*</span></label>
+      <input type="radio" id="man" name="gender" value="man" checked />Muž
+      <input type="radio" id="woman" name="gender" value="woman" />Žena
+      <label for="birthdate">Dátum narodenia:<span style="color: red">*</span></label>
+      <input type="date" id="birthdate" class="styled-input" required />
+      <div id="birthdate-error" class="error-message" style="display: none; color: red">
+        Zadaj dátum narodenia!
+      </div>
+      <label for="age">Vek:</label>
+      <input type="text" id="age" placeholder="Vyplní sa automaticky" class="styled-input" readonly />
+
+      <label for="phone-number-label" style="color: white">Tel. číslo: <span style="color: red">*</span></label>
+      <div class="phone-input">
+        <select id="phone-prefix" style="width: 80px" required>
+          <option value="+421">+421</option>
+          <option value="+420">+420</option>
+        </select>
+        <input type="text" id="phone-number" placeholder="Zadaj tel. číslo" required maxlength="9" />
+      </div>
+      <div id="phone-character-count" class="character-count">0/9</div>
+      <div id="phone-error" class="error-message" style="display: none; color: red">
+        Neplatný formát !
+      </div>
+    </section>
+
+    <section class="column">
+      <label for="choice">Chceš rezerváciu alebo sa prihlásiť na súťaž?</label>
+      <input type="radio" id="play-choice" name="choice" value="play" checked />Rezervácia
+      <input type="radio" id="compete-choice" name="choice" value="competitive" />Súťaž
+
+      <section id="play">
+        <label for="num-hours">Počet hodín:</label>
+        <select id="num-hours" class="styled-input">
+          <option value="1">1 hodina (30€)</option>
+          <option value="2">2 hodiny (50€)</option>
+          <option value="3">3 hodiny (80€)</option>
+          <option value="4">4 hodiny (100€)</option>
+          <option value="5">4+ hodín (350€)</option>
+        </select>
+        <div class="equipment-container">
+          <label for="equipment">Doplnky:</label>
+          <input type="checkbox" id="equipment" />
+          <div class="equipment-container-elements">
+            <div class="equipment-options">
+              <select id="equipment-type">
+                <option value="golf-equipments">Príslušenstvo</option>
+                <option value="golf-cart">Golfový vozík</option>
+                <option value="golf-cart-equipments">
+                  Golfový vozík + Príslušenstvo
+                </option>
+              </select>
+            </div>
+            <div id="div-golf-equipment-type" class="only-equipment-options" style="display: none">
+              <select id="golf-equipment-type">
+                <option value="only-golf-equipments">
+                  Golfové palice 10€/h
+                </option>
+                <option value="only-golf-balls">Loptičky 5€/h</option>
+                <option value="golf-equipments-balls">
+                  Golfové palice + Loptičky 13€/h
+                </option>
+              </select>
+            </div>
+            <div id="div-cart-equipment-type" class="only-cart-options" style="display: none">
+              <select id="cart-equipment-type">
+                <option value="only-golf-cart-2">
+                  Vozík pre 2 osoby 30€/h
+                </option>
+                <option value="only-golf-cart-4">
+                  Vozík pre 4 osoby 45€/h
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="date-reservation">
+          <label for="reservation-date">Vyber dátum rezervácie:</label>
+          <input type="date" id="reservation-date" name="reservation-date" class="styled-input" required />
+          <label for="reservation-time">Vyber čas rezervácie:</label>
+          <input type="time" id="reservation-time" name="reservation-time" class="styled-input" required />
+          <div id="reservation-error" class="error-message" style="display: none; color: red">
+            Zadaj dátum a čas pre rezerváciu!
+          </div>
+        </div>
+      </section>
+
+      <section id="competetive-game" style="display: none">
+        <label id="competetive-game">Vyhral si už daakú súťaž?</label>
+        <input type="radio" id="not-won-option" name="won-choice" value="not-won" checked />Nie
+        <input type="radio" id="won-option" name="won-choice" value="won" />Áno
+
+        <div class="competion-options" style="display: none" id="competition-options">
+          <label for="competition">Súťaže:</label>
+          <div id="competition-checkboxes">
+            <input type="checkbox" id="golf-vista" class="competition-checkbox" value="GolfVista CUP" />GolfVista
+            CUP<br />
+            <input type="checkbox" id="legends-cup" class="competition-checkbox"
+              value="GolfVista LegendsCUP" />GolfVista LegendsCUP<br />
+            <input type="checkbox" id="amateur-cup" class="competition-checkbox"
+              value="GolfVista AmateurCUP" />GolfVista AmateurCUP<br />
+            <input type="checkbox" id="other-checkbox" class="competition-checkbox" value="Other" />Iné<br />
+          </div>
+
+          <div id="other-competition-container" style="display: none">
+            <label for="other-competition-name">Iná súťaž:</label>
+            <input type="text" id="other-competition-name" placeholder="Zadaj meno súťaži, ktoré si vyhral" />
+          </div>
+        </div>
+      </section>
+      <label for="note">Poznámka:</label>
+      <textarea id="note" placeholder="Ak máš špeciálne požiadavky, napíš nám" rows="4" cols="33"
+        maxlength="200"></textarea>
+      <div id="note-character-count" class="character-count">0/200</div>
+      <div class="display-name-button">
+        <button id="display-name-button" type="button">
+          Majiteľ
+        </button>
+      </div>
+      <div id="display-name" style="display: none">
+        <input type="text" id="name-input" placeholder="Vaše jméno" readonly>
+      </div>
+    </section>
+  </section>
+  </form>
+  <div class="total-price">Výsledná suma: <span id="price">0 EUR</span></div>
+  <div style="text-align: center; margin-bottom: 20px">
+    <button type="check">Skontrolovať</button>
+  </div>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Zhrnutie:</h1>
+      <div id="name-preview"></div>
+      <div id="surname-preview"></div>
+      <div id="email-preview"></div>
+      <div id="gender-prewview"></div>
+      <div id="birthdate-preview"></div>
+      <div id="age-preview"></div>
+      <div id="phone-preview"></div>
+      <div id="choice-preview"></div>
+      <div id="view-play">
+        <div id="num-hours-preview"></div>
+        <div id="equipment-preview"></div>
+        <div id="date-preview"></div>
+        <div id="time-preview"></div>
+      </div>
+      <div id="view-competition" style="display: none">
+        <div id="won-choice-preview"></div>
+        <div id="competition-preview"></div>
+        <div id="other-competition-preview"></div>
+      </div>
+      <div id="note-preview"></div>
+      <div class="button-center">
+        <button type="submit" form="reservation-form" value="Odoslať"></button>
+      </div>
+      <div id="price-preview"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

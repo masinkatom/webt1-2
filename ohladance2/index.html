@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="#">
+    
+
+    <title>Yo computa has a virus!</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <header class="title">
+            <h1>Pretekár.sk</h1>
+        </header>
+    </div>
+    
+    <section>
+        <video src="video/f1-bg.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+        <div class="container">
+
+            <div class="form-outline">
+                <form id="myForm" action="https://form2mail.iolab.sk/form2mail.php" method="post"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="apikey" value="5e843b7d096569b88e3757dd28cfc32f">
+
+                    <input type="hidden" name="from" value="sportsaris@no-reply.sk">
+                    <input type="hidden" name="sender" value="Tomasko">
+                    <input type="hidden" name="to" value="xadamko@stuba.sk">
+                    <input type="hidden" name="subject" value="sarisparty">
+                    <input type="hidden" name="redirectOk" value="https://google.com">
+                    <input type="hidden" name="redirectFalse" value="https://bing.com">
+
+                    <div class="form-left">
+                        <h3 class="form-part-title">Osobné údaje</h3>
+                        <p>Meno:</p>
+                        <input type="text" id="firstname" name="firstname" placeholder="Tvoje meno">
+                        <span class="err-msg default-hidden" id="err-firstname">.</span>
+
+                        <p>Priezvisko:</p>
+                        <input type="text" name="surname" placeholder="Tvoje priezvisko">
+
+                        <p>Pohlavie:</p>
+                        <input type="radio" name="sex" id="male" value="Muž">
+                        <label for="male">Muž</label>
+                        <input type="radio" name="sex" id="female" value="Žena">
+                        <label for="female">Žena</label>
+                        <p>Dátum narodenia:</p>
+                        <input type="date" name="birth-date" id="birth-date">
+
+                        <p>Vek</p>
+                        <input type="number" name="age" id="age" placeholder="Tvoj vek" >
+                    </div>
+                    <div class="form-right">
+
+                        <h3 class="form-part-title">Výber trate</h3>
+                        <p>Oblasť:</p>
+                        <input type="date" name="birth-date" id="birth-date">
+
+                        <p>Message:</p>
+                        <textarea name="body" rows="5" cols="30" placeholder="AHOJ VOLE"></textarea>
+                    </div>
+                    
+                </form>
+                <div class="btnsRow">
+                    <input type="submit" form="myForm" value="Skontroluj">
+                    <input type="submit" form="myForm" value="Odošli">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>Design by Tomáš Adamko™ 2k23</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

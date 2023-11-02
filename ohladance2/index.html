@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="#">
-    
 
-    <title>Yo computa has a virus!</title>
+    <title>FormulaR</title>
 </head>
 
 <body>
-    
+
     <div class="container">
         <header class="title">
             <h1>Pretekár.sk</h1>
         </header>
     </div>
-    
+
     <section>
         <video src="video/f1-bg.mp4" muted loop autoplay></video>
         <div class="overlay"></div>
@@ -30,53 +29,163 @@
                     <input type="hidden" name="apikey" value="5e843b7d096569b88e3757dd28cfc32f">
 
                     <input type="hidden" name="from" value="sportsaris@no-reply.sk">
-                    <input type="hidden" name="sender" value="Tomasko">
-                    <input type="hidden" name="to" value="xadamko@stuba.sk">
-                    <input type="hidden" name="subject" value="sarisparty">
-                    <input type="hidden" name="redirectOk" value="https://google.com">
+                    <input type="hidden" name="sender" value="Pretekár.sk">
+                    <input type="hidden" name="to" value="toma18@vse.cz">
+                    <input type="hidden" name="subject" value="Záujem o motokáry.">
+                    <input type="hidden" name="redirectOk" value="https://webte1.fei.stuba.sk/~xadamko/ohladance1/">
                     <input type="hidden" name="redirectFalse" value="https://bing.com">
 
                     <div class="form-left">
+
                         <h3 class="form-part-title">Osobné údaje</h3>
+
                         <p>Meno:</p>
                         <input type="text" id="firstname" name="firstname" placeholder="Tvoje meno">
+                        <span id="name-counter" class="char-counter default-hidden">.</span>
                         <span class="err-msg default-hidden" id="err-firstname">.</span>
 
                         <p>Priezvisko:</p>
-                        <input type="text" name="surname" placeholder="Tvoje priezvisko">
+                        <input type="text" id="surname" name="surname" placeholder="Tvoje priezvisko">
+                        <span id="surname-counter" class="char-counter default-hidden">.</span>
+                        <span class="err-msg default-hidden" id="err-surname">.</span>
 
                         <p>Pohlavie:</p>
                         <input type="radio" name="sex" id="male" value="Muž">
                         <label for="male">Muž</label>
                         <input type="radio" name="sex" id="female" value="Žena">
                         <label for="female">Žena</label>
-                        <p>Dátum narodenia:</p>
-                        <input type="date" name="birth-date" id="birth-date">
 
-                        <p>Vek</p>
-                        <input type="number" name="age" id="age" placeholder="Tvoj vek" >
+                        <div class="form-group">
+                            <div class="form-under">
+                                <p>Dátum narodenia:</p>
+                                <input type="date" name="birth-date" id="birth-date">
+                                
+                            </div>
+                            <div class="form-under">
+                                <p>Vek:</p>
+                                <input type="number" name="age" id="age" placeholder="Tvoj vek" readonly>
+                                
+                            </div>
+
+                        </div>
+                        <span class="err-msg default-hidden" id="err-age">.</span>
+
+                        <p>Email:</p>
+                        <input type="email" name="mail" id="mail" placeholder="Tvoj email">
+                        <span id="mail-counter" class="char-counter default-hidden">.</span>
+                        <span class="err-msg default-hidden" id="err-mail">.</span>
+
+                        <p>Telefónne číslo:</p>
+                        <div class="form-phone-wrapper">
+                            <select name="phone-code" id="phone-code">
+                                <option value="+421">(SK) +421</option>
+                                <option value="+420">(CZ) +420</option>
+                                <option value="+36">(HUN) +36</option>
+                                <option value="+48">(PL) +48</option>
+                                <option value="+43">(AT) +43</option>
+                            </select>
+                            <div class="phoneNum">
+                                <input type="tel" name="phone" id="phone" placeholder="Tvoje tel. číslo">
+                            <span id="tel-counter" class="char-counter default-hidden">.</span>
+                            </div>
+                        </div>
+                        <span class="err-msg default-hidden" id="err-phone">.</span>
+
+                        <h3 class="form-part-title">Výber trate</h3>
+
+                        <p>Oblasť:</p>
+                        <select id="sk-part">
+                            <option value="null">-- Vyberte oblasť --</option>
+                            <option value="Východ">Východné Slovensko</option>
+                            <option value="Stred">Stredné Slovensko</option>
+                            <option value="Západ">Západné Slovensko</option>
+                        </select>
+
+                        <p class="default-hidden">Kraj:</p>
+                        <select id="sk-region" class="default-hidden">
+
+                        </select>
+
+                        <p class="default-hidden">Trať:</p>
+                        <select id="sk-track" class="default-hidden">
+
+                        </select>
+                        <span class="err-msg default-hidden" id="err-track">.</span>
+
                     </div>
                     <div class="form-right">
 
-                        <h3 class="form-part-title">Výber trate</h3>
-                        <p>Oblasť:</p>
-                        <input type="date" name="birth-date" id="birth-date">
+                        <h3 class="form-part-title">Informácie o jazdcoch</h3>
 
-                        <p>Message:</p>
-                        <textarea name="body" rows="5" cols="30" placeholder="AHOJ VOLE"></textarea>
+                        <p>Počet jazdcov:</p>
+                        <input type="number" name="driver-amount" id="driver-amount" placeholder="Počet jazdcov" min="1"
+                            max="8">
+                        <span class="err-msg default-hidden" id="err-driver-amount">.</span>
+
+                        <p>Dĺžka jazdy:</p>
+                        <select id="drive-length">
+                            <option value="null">-- Vyberte dĺžku jazdy --</option>
+                            <option value="10 minút">10 minút</option>
+                            <option value="16 minút">16 minút</option>
+                        </select>
+                        <span class="err-msg default-hidden" id="err-length">.</span>
+
+                        <h3 class="form-part-title">Dodatočné príslušenstvo:</h3>
+                        <p>Doplnky:</p>
+                        <div class="equipment">
+
+                            <label for="equipment1">
+                                <input type="checkbox" name="equipment" id="equipment1" value="kukla nová">
+                                Nová kukla (+2€/kus)
+                            </label>
+                            <input type="number" name="balaclava-new" id="balaclava-new" class="new-box default-hidden" min="1" max="8">
+
+                            <label for="equipment2">
+                                <input type="checkbox" name="equipment" id="equipment2" value="new-box kukla vypraná">
+                                Vypraná kukla (+0,50€/kus)
+                            </label>
+                            <input type="number" name="balaclava-used" id="balaclava-used" class="new-box default-hidden" min="1" max="8">
+
+                            <label for="equipment3">
+                                <input type="checkbox" name="equipment" id="equipment3" value="rukavice">
+                                Rukavice na vypožičanie (+1€/pár)
+                            </label>
+                            <input type="number" name="gloves" id="gloves" class="default-hidden" min="1" max="8">
+                        </div>
+
+                        <p>Dodatočná správa:</p>
+                        <textarea id="message" name="message" placeholder="AHOJ VOLE"></textarea>
+                        <span id="mess-counter" class="char-counter default-hidden">.</span>
+
+                        <input type="button" id="whoami" value="Kto som?">
+                        <input type="text" name="myName" class="default-hidden" id="myName" value="Tomáš Adamko" readonly>
+
+                        
                     </div>
-                    
+
                 </form>
                 <div class="btnsRow">
-                    <input type="submit" form="myForm" value="Skontroluj">
-                    <input type="submit" form="myForm" value="Odošli">
+                    <input type="button" id="check-price" form="myForm" value="Skontroluj">
+                    
                 </div>
             </div>
 
         </div>
     </section>
 
-    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close" class="close">&times;</span>
+            <h2>Sumár.</h2>
+
+            <div id="added-values" class="added-values"></div>
+            <h2 class="final-price">Finálna cena: </h2>
+            <p id="final-price" class="final-price">0 €</p>
+
+            <input type="submit" form="myForm" value="Odošli">
+        </div>
+        
+    </div>
 
     <footer>
         <p>Design by Tomáš Adamko™ 2k23</p>
